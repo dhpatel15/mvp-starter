@@ -7,7 +7,7 @@ class ListItem extends React.Component {
     this.state ={
     };
 
-    
+
     this.onSubmit = this.onSubmit.bind(this)
   }
 
@@ -18,8 +18,6 @@ class ListItem extends React.Component {
   }
 
   render () {
-
-    console.log(this.props)
     return (
     <div>
       <div>Vet Name: {this.props.vet.vet_name}</div>

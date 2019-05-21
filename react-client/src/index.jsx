@@ -77,7 +77,7 @@ class App extends React.Component {
       {this.state.vets.length >= 1 ? <List vets={this.state.vets} /> : <div></div>}
       {this.state.vets.length >= 1 ? <Left vet={this.state.vets[0]} onReject={this.onReject} /> : <div></div>}
       {this.state.vets.length >= 1 ? <Right vet={this.state.vets[0]} onAccept={this.onAccept} /> : <div></div>}
-      <Profile />
+      {this.state.vets.length >= 1 ? <Profile vet={this.state.vets[0]} /> : <div></div>}
     </div>
     )
   }
