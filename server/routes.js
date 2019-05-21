@@ -1,9 +1,11 @@
 const controller = require('./controllers');
 const router = require('express').Router();
 
-//Connect controller methods to their corresponding routes
-// router.get();
+router.get('/api/getVets', controller.getVets.get);
 
-// router.post();
+router.post('/api/deleteVet', controller.deleteVet.post);
+
+router.post('/api/addVet', controller.addVet.post);
+
 
 module.exports = router;

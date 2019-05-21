@@ -1,13 +1,12 @@
 const express = require('express');
 const parser = require('body-parser');
-// const items = require('../database-mysql');
 
 const app = express();
 const router = require('./routes.js');
 
 
 app.use(parser.json());
-// app.use(router);
+app.use(router);
 
 app.use(express.static(__dirname + '/../react-client/dist'));
 

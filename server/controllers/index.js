@@ -1,10 +1,41 @@
 var models = require('../models');
 
 module.exports = {
-  messages: {
-    get: function (req, res) {
-      
-    }, // a function which handles a get request for all messages
-    post: function (req, res) {} // a function which handles posting a message to the database
+  getVets: {
+    get: async (req, res) => {
+      try {
+        let result = await models.getVets.get()
+        res.send(result);
+      } catch (err) {
+        console.log('Error', err);
+        res.sendStatus(500);
+      }
+    }, 
+  },
+  deleteVet:{
+    post: async (req, res) => {
+      let data = req.body;
+      try {
+        let result = await models.deleteVet.post(data)
+        console.log(result);
+        res.send(200);
+      } catch (err) {
+        console.log('Error', err);
+        res.sendStatus(500);
+      }
+    }
+  },  
+  addVet:{
+    post: async (req, res) => {
+      let data = req.body;
+      try {
+        let result = await models.addVet.post(data)
+        console.log(result);
+        res.send(200);
+      } catch (err) {
+        console.log('Error', err);
+        res.sendStatus(500);
+      }
+    }
   },
 };
